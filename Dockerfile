@@ -2,7 +2,10 @@ FROM golang
 
 ADD . /go/src/github.com/matyga/GolangWorkspace1
 RUN go install github.com/matyga/GolangWorkspace1
-CMD ["pwd"]
-CMD ["go","run","main.go"] 
+
+WORKDIR /go/src/github.com/matyga/GolangWorkspace1
 
 EXPOSE 8080
+
+ENTRYPOINT ["go","run","main.go"] 
+
